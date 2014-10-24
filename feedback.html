@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bug Tracker</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="logo.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="header">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img alt="Brand" src="img/logo.png" height="45px"> Bug Tracker </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Current project</a></li>
+                            <li class="divider"></li>
+                            <li><a href="project.html?id=1">Vimpelcom</a></li>
+                            <li><a href="project.html?id=2">NC.CSS</a></li>
+                            <li><a href="#">Sumy Courses</a></li>
+                            <li class="divider"></li>
+                            <li><a href="index.html">All projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Issues <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Assigned to me</a></li>
+                            <li><a href="#">Reported by me</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">All issues</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Fast search issues">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beta <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="new.html">What's new</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="help.html">Help </a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logged as Artem Siliuk <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">My profile</a></li>
+                            <li><a href="#">My settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+</div>
+<div class="container">
+    <div id="content">
+        <div class="col-sm-12">
+            <h3>Feedback</h3>
+        </div>
+        <div class="col-sm-12">
+            <div id="requestResultMessage">
+                <p class="alert alert-success">Thanks for your request. We will answer you as fast as possible.</p>
+            </div>
+            <div id="requestField">
+                <form class="form" role="form" id="feedbackForm" method="get" action="feedback.html">
+
+                    <div class="form-group" id="topicRequestGroup">
+                        <label for="inputTopic" class="control-label"> Request topic </label>
+                        <input type="text" class="form-control" id="inputTopic" placeholder="Topic of the request"
+                               name="topic">
+                    <span style="display: none"
+                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+
+                        <div style="display: none" class="alert alert-danger" role="alert">You should fill request topic
+                        </div>
+                    </div>
+                    <div class="form-group" id="emailGroup">
+                        <label for="inputEmail" class="control-label"> Enter email </label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Your email" name="mail">
+                    <span style="display: none"
+                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+
+                        <div style="display: none" class="alert alert-danger" role="alert">Incorrect email. It should be
+                            like pattern username@host
+                        </div>
+                    </div>
+                    <div class="form-group" id="requestDescriptionGroup">
+                        <label for="inputText" class="control-label"> Your request </label>
+                        <textarea class="form-control" rows="5" id="inputText"
+                                  name="text" placeholder="Enter your request here"></textarea>
+                    <span style="display: none"
+                          class="glyphicon glyphicon-remove form-control-feedback"></span>
+
+                        <div style="display: none" class="alert alert-danger" role="alert">You shoul fill request
+                            description
+                        </div>
+                    </div>
+                    <div align="right">
+                        <button type="button" class="btn btn-success" form="feedbackForm"
+                                onclick="validateFeedbackForm()"
+                                id="feedbackSubmit">
+                            Submit
+                        </button>
+                        <button type="reset" class="btn btn-info" form="feedbackForm" onclick="resetFeedbackForm()">Reset</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-12" align="center">
+                <b>FYI:</b> this form is used to ask major question to developers team. Try to find your answer on the
+                <a href="help.html"> help page</a> before using feedback.
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" id="footerSignature">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                    <div align="center">BugTracker alpha01. Developed by <a href="mailto:artem.siliuk@netcracker.com">Artem
+                Siliuk</a> in 2014 (c)
+                    </div>
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validateform.js"></script>
+</body>
+</html>
