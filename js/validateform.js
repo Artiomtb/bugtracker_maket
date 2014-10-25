@@ -144,7 +144,7 @@ function cancelModify(formId) {
 
 
 function validateText(text) {
-    if (text == "" || text == null)
+    if (text.trim() == "" || text == null)
         return false;
     else return true;
 }
@@ -180,13 +180,18 @@ function switchTab(infoId, tabId) {
 
 function resetForm(formId) {
     var form = $("#" + formId);
-    form.find('input').each(function(index) {
+    form.find('input').each(function (index) {
         $(this).val($(this).attr('value'));
     });
 
-    form.find('select option').prop('selected', function(){
+    form.find('select option').prop('selected', function () {
         return this.defaultSelected;
     })
+
+    form.find('textarea').each(function (index) {
+        $(this).val($(this).html());
+    })
+
 
     form.find('.form-group').removeClass('has-error has-feedback');
     form.find('.alert').hide();
@@ -197,4 +202,41 @@ function resetFeedbackForm() {
     markAsCorrect($('#topicRequestGroup'));
     markAsCorrect($('#requestDescriptionGroup'));
     markAsCorrect($('#emailGroup'));
+}
+
+function resizeTextarea(textareaId) {
+    var text = document.getElementById(textareaId);
+    text.style.height = 'auto';
+    text.style.height = (text.scrollHeight + 5) + 'px';
+}
+
+function switchToModifyIssue(formId, text) {
+    $("#" + text).hide();
+    $("#" + formId).show();
+    resizeTextarea('issueDescription');
+    $("#submitButton").show();
+    $("#cancelButton").show();
+    $("#modifyButton").hide();
+}
+
+function cancelModifyIssue(formId, text) {
+    resetForm(formId);
+    resizeTextarea('issueDescription');
+    $("#" + text).show();
+    $("#" + formId).hide();
+    $("#submitButton").hide();
+    $("#cancelButton").hide();
+    $("#modifyButton").show();
+}
+
+function submitModifyIssue() {
+    var result = true;
+
+    if (!validateText($("#issueDescription").val())) {
+        markAsError($("#issueDescriptionGroup"));
+        result = false;
+    }
+    if (result == true) {
+        $("#issueForm").submit();
+    }
 }

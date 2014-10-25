@@ -1,21 +1,32 @@
 img {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 .alert {
     padding: 4px 12px;
     margin: 4px 0px;
 }
+
 .controlButton {
-	padding-top: 15px;
+    padding-top: 15px;
 }
 
 h3 {
     padding: 0px 10px;
 }
 
-h4{
+h4 {
     padding: 5px;
+}
+
+.listCheck {
+    height: 30px;
+    padding: 0px 12px;
+}
+
+.issueParams > thead > tr > th, .issueParams > tbody > tr > th, .issueParams > tfoot > tr > th, .issueParams > thead > tr > td, .issueParams > tbody > tr > td, .issueParams > tfoot > tr > td {
+    border-top: 1px solid #fff;
+    padding: 6px 8px;
 }
 
 #feedbackSubmit {
@@ -27,8 +38,12 @@ h4{
     padding: 7px 0px 0px;
 }
 
+#issueText {
+    padding: 7px 13px;
+}
+
 .attributeValues {
-    padding: 7px 0px 7px 13px; 
+    padding: 7px 0px 7px 13px;
 }
 
 table .form-group {
@@ -54,15 +69,15 @@ textarea {
 }
 
 .navbar-brand {
-	padding: 2px 15px;
+    padding: 2px 15px;
 }
 
 .navbar-static-bottom {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
-body { 
-	padding-top: 70px; 
+body {
+    padding-top: 70px;
     padding-bottom: 70px;
     overflow-y: hidden !important;
 }
