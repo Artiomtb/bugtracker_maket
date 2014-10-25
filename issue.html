@@ -16,7 +16,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script>$(document).ready(function(){
+    <script>$(document).ready(function () {
         resizeTextarea('issueDescription');
     });</script>
     <![endif]-->
@@ -108,24 +108,20 @@
                 <li class="active">VC-1</li>
             </ol>
         </div>
-        <!--<div class="col-sm-12">
-            <ul class="nav nav-tabs" role="tablist">
-                <li onclick="switchTab('issueTable', 'issuesTableTab')" class="active" id="issuesTableTab"><a
-                        href="#">Issues</a></li>
-                <li onclick="switchTab('statisticsTable', 'statisticsTableTab')" id="statisticsTableTab"><a
-                        href="#">Statistics</a></li>
-                <li onclick="switchTab('paramsTable', 'paramsTableTab')" id="paramsTableTab"><a href="#">Parameters</a>
-                </li>
-            </ul>
-        </div> -->
         <div class="col-sm-4">
             <h3>Add new field to Phone</h3>
         </div>
         <div class="col-sm-8 controlButton">
             <div align="right">
-                <button class="btn btn-primary" onclick="switchToModifyIssue('issueForm','issueText')" id="modifyButton">Modify issue</button>
-                <button class="btn btn-success" onclick="submitModifyIssue()" id="submitButton" style="display: none">Submit</button>
-                <button class="btn btn-default" onclick="cancelModifyIssue('issueForm','issueText')" id="cancelButton" style="display: none">Cancel</button>
+                <button class="btn btn-primary" onclick="switchToModifyIssue('issueForm','issueText')"
+                        id="modifyButton">Modify issue
+                </button>
+                <button class="btn btn-success" onclick="submitModifyIssue()" id="submitButton" style="display: none">
+                    Submit
+                </button>
+                <button class="btn btn-default" onclick="cancelModifyIssue('issueForm','issueText')" id="cancelButton"
+                        style="display: none">Cancel
+                </button>
             </div>
         </div>
         <div class="col-sm-12">
@@ -134,18 +130,23 @@
                     <td width="70%">
                         <div id="issueText">
                             <p>Добрый день.<br/>
-В рамках следующего релиза нам необходимо внести новое поле в телефонные номера - Product.<br/>
-Просьба ответить, когда будет готово.<br/>
+                                В рамках следующего релиза нам необходимо внести новое поле в телефонные номера -
+                                Product.<br/>
+                                Просьба ответить, когда будет готово.<br/>
                             </p>
                         </div>
                         <form class="form" role="form" id="issueForm" style="display: none">
                             <div class="form-group" id="issueDescriptionGroup">
                                 <textarea name="description" id="issueDescription" class="form-control">
-Добрый день.
-В рамках следующего релиза нам необходимо внести новое поле в телефонные номера - Product.
-Просьба ответить, когда будет готово.
+                                    Добрый день.
+                                    В рамках следующего релиза нам необходимо внести новое поле в телефонные номера -
+                                    Product.
+                                    Просьба ответить, когда будет готово.
                                 </textarea>
-                                <div style="display: none" class="alert alert-danger" role="alert">Issue description must be filled</div>
+
+                                <div style="display: none" class="alert alert-danger" role="alert">Issue description
+                                    must be filled
+                                </div>
                             </div>
                         </form>
                         <br/>
@@ -216,6 +217,73 @@
                 </tr>
             </table>
         </div>
+        <div class="col-sm-8">
+            <div id="activity">
+                <h4>Activity:</h4>
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <a href="users.html?id=1">Artem Siliuk</a> <i>changed status to <b>In progress</b></i>.
+                        </td>
+                        <td width="20%">
+                            <i>24.10.2014 17:55</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="users.html?id=1">Artem Siliuk</a> <i>added a comment</i>:<br/>
+                            Good morning. We will implement it at next release.
+                        </td>
+                        <td>
+                            <i>24.10.2014 17:57</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="users.html?id=1">Olga Herasimenko</a> <i>added a comment</i>:<br/>
+                            Thanks. We will wait it.
+                        </td>
+                        <td>
+                            <i>24.10.2014 17:59</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="users.html?id=1">Artem Siliuk</a> <i>added a comment</i>:<br/>
+                            Implemented.
+                        </td>
+                        <td>
+                            <i>24.10.2014 18:01</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="users.html?id=1">Artem Siliuk</a> <i>changed status to <b>Ready for testing</b></i>.
+                        </td>
+                        <td width="20%">
+                            <i>24.10.2014 18:01</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+                <form class="form" role="form" id="commentForm">
+                    <div class="form-group" id="commentGroup">
+                        <textarea name="comment" id="commentText" class="form-control" rows="6"
+                                  placeholder="Enter text of your comment here"></textarea>
+
+                        <div style="display: none" class="alert alert-danger" role="alert">Comment cannot be empty</div>
+                    </div>
+                </form>
+                <div align="right">
+                    <button class="btn btn-success" onclick="validateCommentForm()">Submit</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <div id="footer">

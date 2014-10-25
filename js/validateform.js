@@ -240,3 +240,18 @@ function submitModifyIssue() {
         $("#issueForm").submit();
     }
 }
+
+function validateCommentForm() {
+    var result = true;
+    if(!validateText($("#commentText").val())) {
+        markAsError($("#commentGroup"));
+        result = false;
+    }
+
+    console.log(result);
+
+    if(result == true) {
+        $("#commentForm").submit();
+    }
+    return result;
+}
