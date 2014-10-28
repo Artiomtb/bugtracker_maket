@@ -99,90 +99,39 @@
 <div class="container">
     <div id="content">
         <div class="col-sm-8">
-            <h3>All projects</h3>
-
+            <h3>Assigned to me</h3>
         </div>
         <div class="col-sm-4 controlButton">
-            <div align="right">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProjectModal">Add new
-                    project
-                </button>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span
-                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Add new project</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form role="form" id="addProjectForm" method="get" action="index.html">
-                                <input type="hidden" name="act" value="create_project">
-
-                                <div class="form-group" id="projectNameGroup">
-                                    <label for="projectName">Project name</label>
-                                    <input type="text" class="form-control" name="name" placeholder="Enter project name"
-                                           id="projectName">
-                                    <span style="display: none"
-                                          class="glyphicon glyphicon-remove form-control-feedback"></span>
-
-                                    <div style="display: none" class="alert alert-danger" role="alert">Project name must
-                                        be filled
-                                    </div>
-                                </div>
-                                <div class="form-group" id="projectCodeGroup">
-                                    <label for="projectCode">Project code</label>
-                                    <input type="text" class="form-control" name="code" placeholder="Enter project code"
-                                           id="projectCode">
-                                    <span style="display: none"
-                                          class="glyphicon glyphicon-remove form-control-feedback"></span>
-
-                                    <div style="display: none" class="alert alert-danger" role="alert">Project code must
-                                        be filled
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="validateProjectCreateForm()"
-                                    form="addProjectForm">Submit
-                            </button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
         <div class="col-sm-12">
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>Project name</th>
-                    <th>Code</th>
-                    <th>Issues unresolved</th>
-                    <th>Issues resolved</th>
+                    <th>Issue code</th>
+                    <th>Issue name</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Assigned to</th>
+                    <th>Reported by</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><a href="project.html?id=1">Vimpelcom</a></td>
-                    <td>VC</td>
-                    <td>10</td>
-                    <td>125</td>
+                    <td><a href="issue.html?id=1">VC-1</a></td>
+                    <td><a href="issue.html?id=1">Add new field to Phone</a></td>
+                    <td>Ready for testing</td>
+                    <td>Normal</td>
+                    <td><a href="users.html?id=1">Artem Siliuk</a></td>
+                    <td><a href="users.html?id=1">Olga Herasimenko</a></td>
                 </tr>
                 <tr>
-                    <td><a href="project.html?id=2">NetCracker Customer Support</a></td>
-                    <td>NC.CSS</td>
-                    <td>11</td>
-                    <td>326</td>
+                    <td><a href="issue.html?id=5">VC-5</a></td>
+                    <td><a href="issue.html?id=5">Cell datafix script</a></td>
+                    <td>Open</td>
+                    <td>Low</td>
+                    <td><a href="users.html?id=1">Artem Siliuk</a></td>
+                    <td><a href="users.html?id=5">Alexey Tushin</a></td>
                 </tr>
-
                 </tbody>
             </table>
         </div>
