@@ -144,7 +144,7 @@ function cancelModify(formId) {
 
 
 function validateText(text) {
-    if (text.trim() == "" || text == null)
+    if (text.replace(/^\s+|\s+$/g, '') == "" || text == null)
         return false;
     else return true;
 }
